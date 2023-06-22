@@ -90,7 +90,7 @@ const Profile = () => {
       </Box>
       <Box>
         <div id="profile" className="profile-page ">
-        <div className="container">
+        <div className="containerR">
           <header className="border-bottom">
             <div className="d-flex align-items-center justify-content-between">
               <div className="d-flex">

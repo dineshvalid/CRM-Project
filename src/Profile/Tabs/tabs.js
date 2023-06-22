@@ -188,7 +188,7 @@ export default function BasicTabs() {
     border: 'none',
     resize: 'none',
     outline: 'none',
-     width: '1000%'
+     width: '150px'
     // Add any additional styling you need
   };
 
@@ -575,21 +575,18 @@ setDaterange('')
 
           <Box sx={{ padding: '2%' }}>
 
-
-
-
-              <Box sx={{display:'flex', alignItems:'center',justifyContent:'space-between'}}>
+          
 
             <Box sx={{ marginTop: '2%',  }}>
 
-              <FormControl sx={{ width:'97%',
+              {/* <FormControl sx={{ width:'80%',
                 borderRadius: '10px', border: '1px solid black', backgroundColor: 'white', "& .MuiOutlinedInput-root": {
                   "& > fieldset": {
                     border: "none"
                   }
                 },
               }}  >
-                {/* <InputLabel htmlFor="outlined-adornment-password">Password</InputLabel> */}
+                <InputLabel htmlFor="outlined-adornment-password">Password</InputLabel>
                 <OutlinedInput
                   sx={{}}
                   startAdornment={<TextareaAutosize onChange={e => setTask(e.target.value)}
@@ -597,7 +594,7 @@ setDaterange('')
                     value={task}
                     label="outlined"
                     placeholder='Design Team Meeting '
-                    // style={textareaStyle}
+                   
                     InputProps={{
                       classes: {
                         input: 'no-border',
@@ -607,7 +604,7 @@ setDaterange('')
                     type='text'
                     disableUnderline={true}
                     sx={{
-                      border: '0px solid white', marginLeft: '-11.7px', backgroundColor: 'white', padding: '15px', "& .MuiOutlinedInput-root": {
+                      border: '0px solid white',  backgroundColor: 'white', padding: '15px', "& .MuiOutlinedInput-root": {
                         "& > fieldset": {
                           border: "none"
                         }
@@ -617,21 +614,13 @@ setDaterange('')
                     <InputAdornment sx={{ backgroundColor: 'white' }} position="end">
 
 
-
-
-                      {/* <LocalizationProvider dateAdapter={AdapterDayjs}>
-                        <DemoContainer components={['DateTimePicker']}>
-                          <DateTimePicker value={date} label=" " onChange={e => setDate(e)} sx={{ "& fieldset": { border: 'none' }, "&.MuiOutlinedInput-notchedOutline": { border: "none" }, backgroundColor: 'white',marginBottom:1 }} />
-                        </DemoContainer>
-                      </LocalizationProvider> */}
-
                       <LocalizationProvider dateAdapter={AdapterDayjs}>
                         <DemoContainer components={['DateTimePicker']}>
                           <DateTimePicker value={date} label=" " onChange={e => setDate(e)} />
                         </DemoContainer>
                       </LocalizationProvider>
 
-                      {/* <IonDatetime></IonDatetime>; */}
+                    
 
 
 
@@ -640,29 +629,47 @@ setDaterange('')
 
                     </InputAdornment>
                   }
-                // label="Password"
+             
                 />
 
-              </FormControl>
+              </FormControl> */}
             </Box>
 
-            {/* <Box sx={{marginTop:'20px' , width:'50%'}}>
            
 
-<LocalizationProvider   dateAdapter={AdapterDayjs}>
-      <DemoContainer  components={['DateRangePicker']}>
-        <DateRangePicker    style={dateRangePickerStyle} sx={{padding:'30px',width:'100%',marginBottom:'30px'}}  calendars={1} localeText={{ start: 'Check-in', end: 'Check-out' }} />
-      </DemoContainer>
-    </LocalizationProvider>
-            </Box> */}
-              <Box sx={{marginTop:'20px' , backgroundColor:'white',borderRadius:'10px', border:'1px solid black',width:'55%' }}>
-            <DateRangePicker onChange={setDaterange} value={daterange} localeText={{ start: 'Check-in', end: 'Check-out' }} />
+            <Box sx={{display:'flex',justifyContent:'space-between', width:'100%'}}>
+             
+            <Box sx={{borderRadius:'10px',padding:'-20px', width:'55%', display:'flex',alignItems:'center',backgroundColor:'white', "& .MuiOutlinedInput-root": {
+                        "& > fieldset": {
+                          border: "none"
+                        }
+                      }}}>
+              <TextareaAutosize   value={task} placeholder="TASK" onChange={e => setTask(e.target.value)}  style={textareaStyle1} sx={{ "& .MuiOutlinedInput-root": {
+                        "& > fieldset": {
+                          border: "none"
+                        }
+                      }}}/>
+              <LocalizationProvider  dateAdapter={AdapterDayjs}>
+                        <DemoContainer sx={{width:'65%',}} components={['DateTimePicker']}>
+                          <DateTimePicker  value={date} label=" " onChange={e => setDate(e)} />
+                        </DemoContainer>
+                      </LocalizationProvider>
+                      <SendIcon sx={{ cursor: 'pointer', marginLeft: '10px', marginTop: '5px',marginRight:'5px' }} onClick={onSubmitForm}  />
+                      </Box>
+                      <Box sx={{width: '368px', backgroundColor:'white',borderRadius:'10px', border:'1px solid black',marginLeft:'20px',display:'flex',alignItems:'center' }}>
+            <DateRangePicker sx={{width:'10px'}} onChange={setDaterange} value={daterange} localeText={{ start: 'Check-in', end: 'Check-out' }} />
             <CheckIcon onClick={filterDate}/>
             </Box>
+
+
+
            
+            
            
 
             </Box>
+
+            
 
            
 
@@ -682,7 +689,7 @@ setDaterange('')
                               size="small"
                               disabled={activeIndex !== index} // Disable TextField if not active
                               value={object.time}
-                              sx={{  marginLeft:'5px', "& label": { color: "black" }, "& fieldset": { border: 'none' }, "&.MuiOutlinedInput-notchedOutline": { border: "none" }, width: '55%', backgroundColor: "#6ab4f64a", borderRadius: '10px' }}
+                              sx={{  marginLeft:'5px', "& label": { color: "black" }, "& fieldset": { border: 'none' }, "&.MuiOutlinedInput-notchedOutline": { border: "none" }, width: '75%', backgroundColor: "#6ab4f64a", borderRadius: '10px' }}
                               onChange={(e) => handleInputChange(index, e)}
                             />
                           </Box>
@@ -747,7 +754,7 @@ setDaterange('')
                             size="small"
                             disabled={activeIndex !== index} // Disable TextField if not active
                             value={object.time}
-                            sx={{  marginLeft:'5px', "& label": { color: "black" }, "& fieldset": { border: 'none' }, "&.MuiOutlinedInput-notchedOutline": { border: "none" }, width: '55%', backgroundColor: "#6ab4f64a", borderRadius: '10px' }}
+                            sx={{  marginLeft:'5px', "& label": { color: "black" }, "& fieldset": { border: 'none' }, "&.MuiOutlinedInput-notchedOutline": { border: "none" }, width: '75%', backgroundColor: "#6ab4f64a", borderRadius: '10px' }}
                             onChange={(e) => handleInputChange(index, e)}
                           />
                         </Box>

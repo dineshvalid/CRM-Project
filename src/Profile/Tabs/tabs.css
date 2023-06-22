@@ -55,3 +55,6 @@
   .zoom-effect:hover {
     transform: scale(1.1); /* Zoom in by 20% */
   }
+  .MuiBox-root css-14yidhy{
+    padding: -10px;
+  }
